@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NimbuPlay – Cloud Gaming Platform</title>
+  <meta name="description" content="NimbuPlay – Play AAA cloud games instantly in your browser. No downloads, no installs. Just click and play." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Animated Background -->
+  <div class="bg-stars" id="bgStars"></div>
+  <div class="bg-nebula"></div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo" id="logoLink">
+        <span class="logo-icon">☁️</span>
+        <span class="logo-text">Nimbu<span class="logo-accent">Play</span></span>
+      </a>
+      <nav class="nav" id="mainNav">
+        <a href="#games" class="nav-link" id="navGames">Games</a>
+        <a href="#features" class="nav-link" id="navFeatures">Features</a>
+        <a href="#about" class="nav-link" id="navAbout">About</a>
+      </nav>
+      <a href="game.html" class="btn btn-primary" id="headerPlayBtn">▶ Play Now</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="heroSection">
+    <div class="hero-content">
+      <div class="hero-badge" id="heroBadge">🎮 Cloud Gaming • No Downloads</div>
+      <h1 class="hero-title" id="heroTitle">
+        Play Anywhere,<br />
+        <span class="gradient-text">Anytime, Instantly</span>
+      </h1>
+      <p class="hero-subtitle" id="heroSubtitle">
+        NimbuPlay streams your favorite games straight to your browser.<br />
+        Zero installs. Maximum fun. Pure cloud power.
+      </p>
+      <div class="hero-cta" id="heroCta">
+        <a href="game.html" class="btn btn-primary btn-large pulse-btn" id="heroPlayBtn">
+          <span class="btn-icon">▶</span> Start Playing Free
+        </a>
+        <a href="#games" class="btn btn-ghost btn-large" id="heroBrowseBtn">Browse Games</a>
+      </div>
+      <div class="hero-stats" id="heroStats">
+        <div class="stat-item"><span class="stat-num">100+</span><span class="stat-label">Games</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat-item"><span class="stat-num">60fps</span><span class="stat-label">Streaming</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat-item"><span class="stat-num">0ms</span><span class="stat-label">Setup Time</span></div>
+      </div>
+    </div>
+    <div class="hero-visual" id="heroVisual">
+      <div class="game-preview-card" id="heroCard">
+        <div class="preview-screen">
+          <canvas id="previewCanvas" width="380" height="220"></canvas>
+          <div class="preview-play-overlay" id="previewPlayOverlay">
+            <a href="game.html" class="preview-play-btn" id="previewPlayBtn">▶</a>
+          </div>
+        </div>
+        <div class="preview-info">
+          <span class="preview-badge">🕹️ Featured</span>
+          <span class="preview-title">Super Mario Bros</span>
+          <span class="preview-rating">⭐⭐⭐⭐⭐</span>
+        </div>
+      </div>
+      <div class="floating-badge fb1" id="fb1">🏆 #1 Played</div>
+      <div class="floating-badge fb2" id="fb2">⚡ Instant Load</div>
+    </div>
+  </section>
+
+  <!-- Games Section -->
+  <section class="games-section" id="games">
+    <div class="section-header">
+      <h2 class="section-title">Featured <span class="gradient-text">Games</span></h2>
+      <p class="section-sub">Jump into classics, reimagined for the cloud</p>
+    </div>
+    <div class="games-grid" id="gamesGrid">
+      <!-- Featured: Super Mario -->
+      <div class="game-card game-card--featured" id="cardMario">
+        <div class="card-glow"></div>
+        <div class="card-image mario-bg">
+          <div class="card-badges">
+            <span class="badge badge-hot">🔥 HOT</span>
+            <span class="badge badge-free">FREE</span>
+          </div>
+          <canvas class="card-preview-canvas" id="marioCardCanvas" width="320" height="180"></canvas>
+        </div>
+        <div class="card-body">
+          <div class="card-header-row">
+            <h3 class="card-title">Super Mario Bros</h3>
+            <span class="card-genre">Platformer</span>
+          </div>
+          <p class="card-desc">The iconic plumber returns! Run, jump, and stomp your way through classic levels in this cloud-powered adventure.</p>
+          <div class="card-meta">
+            <div class="card-rating">
+              <span class="stars">★★★★★</span>
+              <span class="rating-num">5.0</span>
+            </div>
+            <span class="card-players">👤 1 Player</span>
+          </div>
+          <a href="game.html" class="btn btn-primary card-play-btn" id="marioPlayBtn">▶ Play Now</a>
+        </div>
+      </div>
+
+      <!-- Coming Soon Cards -->
+      <div class="game-card game-card--soon" id="cardZelda">
+        <div class="card-image zelda-bg">
+          <div class="card-badges"><span class="badge badge-soon">COMING SOON</span></div>
+          <div class="card-placeholder-icon">🗡️</div>
+        </div>
+        <div class="card-body">
+          <div class="card-header-row">
+            <h3 class="card-title">Legend of Zelda</h3>
+            <span class="card-genre">Adventure</span>
+          </div>
+          <p class="card-desc">Embark on an epic quest to save Hyrule in this legendary adventure.</p>
+          <button class="btn btn-ghost card-play-btn" id="zeldaNotifyBtn" onclick="showNotify(this)">🔔 Notify Me</button>
+        </div>
+      </div>
+
+      <div class="game-card game-card--soon" id="cardPacman">
+        <div class="card-image pacman-bg">
+          <div class="card-badges"><span class="badge badge-soon">COMING SOON</span></div>
+          <div class="card-placeholder-icon">👻</div>
+        </div>
+        <div class="card-body">
+          <div class="card-header-row">
+            <h3 class="card-title">Pac-Man</h3>
+            <span class="card-genre">Arcade</span>
+          </div>
+          <p class="card-desc">Chomp your way through mazes while dodging ghosts in this timeless classic.</p>
+          <button class="btn btn-ghost card-play-btn" id="pacmanNotifyBtn" onclick="showNotify(this)">🔔 Notify Me</button>
+        </div>
+      </div>
+
+      <div class="game-card game-card--soon" id="cardTetris">
+        <div class="card-image tetris-bg">
+          <div class="card-badges"><span class="badge badge-soon">COMING SOON</span></div>
+          <div class="card-placeholder-icon">🟥</div>
+        </div>
+        <div class="card-body">
+          <div class="card-header-row">
+            <h3 class="card-title">Tetris</h3>
+            <span class="card-genre">Puzzle</span>
+          </div>
+          <p class="card-desc">Stack, clear, and survive in the most addictive puzzle game ever created.</p>
+          <button class="btn btn-ghost card-play-btn" id="tetrisNotifyBtn" onclick="showNotify(this)">🔔 Notify Me</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section" id="features">
+    <div class="section-header">
+      <h2 class="section-title">Why <span class="gradient-text">NimbuPlay?</span></h2>
+      <p class="section-sub">The future of gaming is in the cloud</p>
+    </div>
+    <div class="features-grid" id="featuresGrid">
+      <div class="feature-card" id="feat1">
+        <div class="feature-icon">⚡</div>
+        <h3 class="feature-title">Instant Play</h3>
+        <p class="feature-desc">No downloads, no installs. Click any game and you're playing in under a second.</p>
+      </div>
+      <div class="feature-card" id="feat2">
+        <div class="feature-icon">☁️</div>
+        <h3 class="feature-title">Cloud Powered</h3>
+        <p class="feature-desc">Games run on our high-performance cloud servers. Your saves sync everywhere.</p>
+      </div>
+      <div class="feature-card" id="feat3">
+        <div class="feature-icon">🎮</div>
+        <h3 class="feature-title">Any Device</h3>
+        <p class="feature-desc">Play on PC, tablet, or phone. Full keyboard, gamepad, and touch support.</p>
+      </div>
+      <div class="feature-card" id="feat4">
+        <div class="feature-icon">🔒</div>
+        <h3 class="feature-title">Secure & Safe</h3>
+        <p class="feature-desc">All games are sandboxed and verified. Play with complete peace of mind.</p>
+      </div>
+      <div class="feature-card" id="feat5">
+        <div class="feature-icon">🏆</div>
+        <h3 class="feature-title">Leaderboards</h3>
+        <p class="feature-desc">Compete with players globally. Track your scores and climb the ranks.</p>
+      </div>
+      <div class="feature-card" id="feat6">
+        <div class="feature-icon">🆓</div>
+        <h3 class="feature-title">Always Free</h3>
+        <p class="feature-desc">Our core library of classic games is completely free. No credit card needed.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner" id="ctaBanner">
+    <div class="cta-content">
+      <h2 class="cta-title">Ready to Play?</h2>
+      <p class="cta-sub">Jump into Super Mario Bros right now — no signup required.</p>
+      <a href="game.html" class="btn btn-primary btn-large pulse-btn" id="ctaPlayBtn">▶ Play Super Mario Free</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="siteFooter">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="logo-icon">☁️</span>
+        <span class="logo-text">Nimbu<span class="logo-accent">Play</span></span>
+      </div>
+      <p class="footer-copy">© 2026 NimbuPlay. Built with ❤️ for gamers everywhere.</p>
+      <div class="footer-links">
+        <a href="#" id="footerPrivacy">Privacy</a>
+        <a href="#" id="footerTerms">Terms</a>
+        <a href="#" id="footerContact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Notification Toast -->
+  <div class="toast" id="notifyToast">🔔 We'll notify you when the game launches!</div>
+
+  <script>
+    // ─── Starfield ───────────────────────────────────────────────────────────
+    const starsEl = document.getElementById('bgStars');
+    for (let i = 0; i < 180; i++) {
+      const s = document.createElement('div');
+      s.className = 'star';
+      s.style.cssText = `
+        left:${Math.random()*100}%;
+        top:${Math.random()*100}%;
+        width:${Math.random()*2.5+0.5}px;
+        height:${Math.random()*2.5+0.5}px;
+        animation-delay:${Math.random()*4}s;
+        animation-duration:${Math.random()*3+2}s;
+      `;
+      starsEl.appendChild(s);
+    }
+
+    // ─── Header scroll effect ────────────────────────────────────────────────
+    window.addEventListener('scroll', () => {
+      document.getElementById('header').classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // ─── Notify button ───────────────────────────────────────────────────────
+    function showNotify(btn) {
+      btn.textContent = '✅ You\'re on the list!';
+      btn.disabled = true;
+      const toast = document.getElementById('notifyToast');
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3000);
+    }
+
+    // ─── Preview Canvas (Hero) ───────────────────────────────────────────────
+    (function drawHeroPreview() {
+      const c = document.getElementById('previewCanvas');
+      const ctx = c.getContext('2d');
+      const W = c.width, H = c.height;
+      // Sky
+      ctx.fillStyle = '#5C94FC';
+      ctx.fillRect(0, 0, W, H);
+      // Clouds
+      function cloud(x, y, s) {
+        ctx.fillStyle = 'rgba(255,255,255,0.9)';
+        ctx.beginPath();
+        ctx.arc(x, y, s*1.2, 0, Math.PI*2);
+        ctx.arc(x+s*1.4, y, s, 0, Math.PI*2);
+        ctx.arc(x+s*2.6, y, s*1.2, 0, Math.PI*2);
+        ctx.fill();
+        ctx.fillRect(x-s*0.2, y, s*3+s*0.2, s*0.8);
+      }
+      cloud(30, 40, 14); cloud(180, 30, 10); cloud(300, 50, 12);
+      // Hills
+      ctx.fillStyle = '#00A800';
+      ctx.beginPath(); ctx.arc(60, H-30, 55, 0, Math.PI); ctx.fill();
+      ctx.beginPath(); ctx.arc(280, H-30, 40, 0, Math.PI); ctx.fill();
+      // Ground
+      ctx.fillStyle = '#C84C0C'; ctx.fillRect(0, H-30, W, 30);
+      ctx.fillStyle = '#A84000';
+      for (let x=0; x<W; x+=20) { ctx.fillRect(x, H-30, 1, 30); }
+      ctx.fillRect(0, H-30, W, 1);
+      // Blocks
+      function block(x,y,col='#C8A800') {
+        ctx.fillStyle=col; ctx.fillRect(x,y,20,20);
+        ctx.fillStyle='rgba(255,255,255,0.3)'; ctx.fillRect(x,y,20,3); ctx.fillRect(x,y,3,20);
+        ctx.fillStyle='rgba(0,0,0,0.2)'; ctx.fillRect(x,y+17,20,3); ctx.fillRect(x+17,y,3,20);
+        ctx.fillStyle='#000'; ctx.font='bold 12px monospace'; ctx.fillText('?',x+5,y+15);
+      }
+      block(90, H-70); block(115, H-70); block(140, H-70);
+      // Pipe
+      ctx.fillStyle='#00A800'; ctx.fillRect(200, H-70, 30, 40);
+      ctx.fillStyle='#00C800'; ctx.fillRect(196, H-74, 38, 10);
+      // Mario (simple pixel art)
+      function mario(px,py) {
+        ctx.fillStyle='#CC0000'; ctx.fillRect(px+4,py,16,7); // hat
+        ctx.fillStyle='#FFCC88'; ctx.fillRect(px+2,py+7,20,10); // face
+        ctx.fillStyle='#663300'; ctx.fillRect(px+4,py+11,5,4); // mustache L
+        ctx.fillRect(px+15,py+11,5,4); // mustache R
+        ctx.fillStyle='#CC0000'; ctx.fillRect(px,py+17,24,10); // body
+        ctx.fillStyle='#0044CC'; ctx.fillRect(px,py+27,10,10); // leg L
+        ctx.fillRect(px+14,py+27,10,10); // leg R
+        ctx.fillStyle='#663300'; ctx.fillRect(px-1,py+34,11,6); // shoe L
+        ctx.fillRect(px+14,py+34,11,6); // shoe R
+      }
+      mario(50, H-70);
+      // Goomba
+      ctx.fillStyle='#8B4513'; ctx.fillRect(160,H-56,22,22);
+      ctx.fillStyle='#FFCC88'; ctx.fillRect(162,H-52,4,8); ctx.fillRect(174,H-52,4,8); // feet
+      ctx.fillStyle='#000'; ctx.fillRect(164,H-50,4,4); ctx.fillRect(174,H-50,4,4); // eyes
+      ctx.fillStyle='#663300'; ctx.fillRect(162,H-44,18,4); // mouth
+      // Coins
+      for(let i=0;i<4;i++){
+        ctx.fillStyle='#FFD700';
+        ctx.beginPath(); ctx.arc(90+i*25,H-95,5,0,Math.PI*2); ctx.fill();
+      }
+    })();
+
+    // ─── Card preview canvas ─────────────────────────────────────────────────
+    (function drawCardPreview() {
+      const c = document.getElementById('marioCardCanvas');
+      if (!c) return;
+      const ctx = c.getContext('2d');
+      const W = c.width, H = c.height;
+      ctx.fillStyle='#5C94FC'; ctx.fillRect(0,0,W,H);
+      // Clouds
+      ctx.fillStyle='rgba(255,255,255,0.85)';
+      [40,160,270].forEach(x=>{
+        ctx.beginPath();ctx.arc(x,30,12,0,Math.PI*2);ctx.arc(x+18,25,10,0,Math.PI*2);ctx.arc(x+36,30,12,0,Math.PI*2);ctx.fill();
+        ctx.fillRect(x,30,36,12);
+      });
+      // Ground
+      ctx.fillStyle='#C84C0C'; ctx.fillRect(0,H-28,W,28);
+      // Pipes
+      [[60,H-60],[200,H-70]].forEach(([x,y])=>{
+        ctx.fillStyle='#00A800'; ctx.fillRect(x,y,28,H-y-28);
+        ctx.fillStyle='#00C800'; ctx.fillRect(x-3,y-8,34,10);
+      });
+      // Blocks
+      [110,136,162].forEach(x=>{
+        ctx.fillStyle='#C8A800'; ctx.fillRect(x,H-80,24,24);
+        ctx.fillStyle='#000'; ctx.font='bold 14px monospace'; ctx.fillText('?',x+6,H-62);
+      });
+      // Mario (tiny)
+      ctx.fillStyle='#CC0000'; ctx.fillRect(20,H-56,14,6);
+      ctx.fillStyle='#FFCC88'; ctx.fillRect(18,H-50,18,8);
+      ctx.fillStyle='#CC0000'; ctx.fillRect(16,H-42,22,9);
+      ctx.fillStyle='#0044CC'; ctx.fillRect(16,H-33,10,9); ctx.fillRect(28,H-33,8,9);
+      ctx.fillStyle='#663300'; ctx.fillRect(15,H-27,11,6); ctx.fillRect(28,H-27,10,6);
+    })();
+
+    // ─── Intersection Observer for animations ────────────────────────────────
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.feature-card, .game-card, .stat-item').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

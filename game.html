@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Super Mario Bros – NimbuPlay</title>
+<meta name="description" content="Play Super Mario Bros instantly in your browser on NimbuPlay cloud gaming."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/game.css"/>
+</head>
+<body>
+<div id="wrapper">
+  <div id="hud">
+    <div class="hud-block"><div class="hud-label">MARIO</div><div class="hud-val" id="hScore">000000</div></div>
+    <div class="hud-block"><div class="hud-label">🪙</div><div class="hud-val" id="hCoins">×00</div></div>
+    <div class="hud-block"><div class="hud-label">WORLD</div><div class="hud-val" id="hWorld">1-1</div></div>
+    <div class="hud-block"><div class="hud-label">TIME</div><div class="hud-val" id="hTime">400</div></div>
+    <div class="hud-block"><div class="hud-label">LIVES</div><div class="hud-val" id="hLives">♥ 3</div></div>
+  </div>
+  <div id="canvasWrap">
+    <canvas id="gc" width="800" height="416"></canvas>
+    <div id="overlay" class="hidden">
+      <div id="overlayBox">
+        <div id="overlayTitle"></div>
+        <div id="overlayMsg"></div>
+        <button id="overlayBtn" onclick="overlayAction()"></button>
+      </div>
+    </div>
+  </div>
+  <div id="controls">
+    <span>← → Move</span><span>Z / Space – Jump</span><span>X – Run</span><span>P – Pause</span>
+    <a href="index.html" id="backBtn">← Back to Platform</a>
+  </div>
+</div>
+<script src="js/game.js"></script>
+</body>
+</html>
